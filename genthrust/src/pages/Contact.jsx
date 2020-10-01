@@ -1,7 +1,12 @@
 import React from "react";
+import Gps from "../components/Gps";
 
 const Contact = () => {
-  return <div></div>;
+  return (
+    <>
+      <Gps />
+    </>
+  );
 };
 
 export default Contact;
