@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import MobileRightMenuSlider from "@material-ui/core/Drawer";
 import {
   AppBar,
   Toolbar,
   Typography,
   Box,
-  Link,
   List,
   ListItem,
   ListItemText,
@@ -59,38 +59,37 @@ const Header = () => {
     right: false,
   });
 
-  const toggleSlider = (slider, open) => {
+  const toggleSlider = (slider, open) => () => {
     setNav({ ...nav, [slider]: open });
   };
 
   const classes = useStyles();
 
-  const sideList = (slider) => {
+  const sideList = (slider) => (
     <Box
       className={classes.menuSlider}
       component="div"
       onClick={toggleSlider(slider, false)}
     >
       <List>
-        {menuIcon.map((item, key) => (
-          <ListItem button key={key} component={Link} to={item.listPath}>
+        {menuIcon.map((lsItem, key) => (
+          <ListItem button key={key} component={Link} to={lsItem.listPath}>
             <ListItemIcon className={classes.listItem}>
-              {item.listIcon}
+              {lsItem.listIcon}
             </ListItemIcon>
             <ListItemText
               className={classes.listItem}
-              primary={item.listText}
+              primary={lsItem.listText}
             />
           </ListItem>
         ))}
       </List>
-    </Box>;
-  };
-
+    </Box>
+  );
   return (
-    <Box component="nav">
-      <div className={classes.root}>
-        <AppBar position="static">
+    <>
+      <Box component="nav">
+        <AppBar position="static" className={classes.root}>
           <Toolbar>
             <IconButton
               edge="start"
@@ -113,8 +112,8 @@ const Header = () => {
             </MobileRightMenuSlider>
           </Toolbar>
         </AppBar>
-      </div>
-    </Box>
+      </Box>
+    </>
   );
 };
 
