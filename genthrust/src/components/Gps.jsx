@@ -1,27 +1,29 @@
 import React, { useState } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import ReactMapGl, { Marker } from "react-map-gl";
 
-const mapStyles = {
-  width: "100%",
-  height: "100%",
-};
-
-const Gps = (props) => {
-  const [location, setLocation] = useState({
-    latitude: 0,
-    longitude: 0,
+const Gps = () => {
+  const [viewport, setViewport] = useState({
+    latitude: 25.806094,
+    longitude: -80.383043,
+    zoom: 10,
+    width: "100%",
+    height: "100%",
   });
-  return (
-    <div style={{ height: "100vh" }}>
-      <Map google={props.google} zoom={14} style={mapStyles}>
-        <Marker onClick={this.onMarkerClick} name={"Current location"} />
 
-        <InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
-      </Map>
+  return (
+    <div style={{ height: "100vh", width: "100vw" }}>
+      <ReactMapGl
+        {...viewport}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapStyle="mapbox://styles/duex39/ckfsuek1011i519p5djk17rqj"
+        onViewportChange={(viewport) => {
+          setViewport(viewport);
+        }}
+      >
+        <Marker position={{ viewport }} />
+      </ReactMapGl>
     </div>
   );
 };
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyBFrYQMM8OKq4s4lN4Gp1LonrVS313IJ3I",
-})(Gps);
+export default Gps;
