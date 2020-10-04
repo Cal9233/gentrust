@@ -1,8 +1,17 @@
 import React from "react";
-import Image1 from "../images/background3.jpg";
+import "../App.css";
+import Video from "../components/Video";
+import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <>
+      <Video />
+      <Cards />
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
