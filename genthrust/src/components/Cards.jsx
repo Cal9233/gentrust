@@ -36,7 +36,7 @@ function Cards() {
               path="/contact"
             />
             <CardItem
-              src="../images/Background3.jpg"
+              src="../images/background3.jpg"
               text="EXAMPLE"
               label="Account"
               path="/sign-up"
