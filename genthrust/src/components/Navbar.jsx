@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "./Button";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -58,7 +60,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {Button && <Button buttonStyle="btn--outline">Sign Up</Button>}
+          {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
         </div>
       </nav>
     </>
