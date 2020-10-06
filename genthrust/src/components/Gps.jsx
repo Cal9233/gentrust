@@ -1,29 +1,20 @@
-// import React, { useState } from "react";
-// import ReactMapGl, { Marker } from "react-map-gl";
+import React from "react";
+import Iframe from "react-iframe";
 
-// const Gps = () => {
-//   const [viewport, setViewport] = useState({
-//     latitude: 25.806094,
-//     longitude: -80.383043,
-//     zoom: 10,
-//     width: "100%",
-//     height: "100%",
-//   });
+const Gps = () => {
+  return (
+    <div style={{ width: "100%" }}>
+      <Iframe
+        width="100%"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=3509%20NW%20115%20Ave.%20Doral%20Fl%2033178+(GenThrust)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></Iframe>
+    </div>
+  );
+};
 
-//   return (
-//     <div style={{ height: "100vh", width: "100vw" }}>
-//       <ReactMapGl
-//         {...viewport}
-//         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-//         mapStyle="mapbox://styles/duex39/ckfsuek1011i519p5djk17rqj"
-//         onViewportChange={(viewport) => {
-//           setViewport(viewport);
-//         }}
-//       >
-//         <Marker position={{ viewport }} />
-//       </ReactMapGl>
-//     </div>
-//   );
-// };
-
-// export default Gps;
+export default Gps;
