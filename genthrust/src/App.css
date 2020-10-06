@@ -8,7 +8,7 @@
 .home,
 .about,
 .contact,
-.sign-up {
+.services {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -34,7 +34,7 @@
   font-size: 100px;
 }
 
-.sign-up {
+.services {
   background-image: url("/genthrust/src/images/background3.jpg");
   background-position: center;
   background-size: cover;
