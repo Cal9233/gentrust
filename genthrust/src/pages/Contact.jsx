@@ -1,67 +1,72 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import Gps from "../components/Gps";
 import Footer from "../components/Footer";
+import emailjs from "emailjs-com";
+import "../pages/Contact.css";
 import "../App.css";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [disabled, setDisabled] = useState(false);
-  const [emailSent, setEmailSent] = useState(null);
-
-  const handleChange = (e) => {
-    setName({ ...name, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventdefault();
-    setDisabled(true);
-    axios
-      .post("/api/email", { disabled, emailSent })
-      .then((res) => {
-        if (res.data.success) {
-          setDisabled(false);
-          setEmailSent(true);
-        } else {
-          setDisabled(false);
-          setEmailSent(false);
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        `${process.env.REACT_APP_EMAILJS_SERVICE}`,
+        `${process.env.REACT_APP_EMAILJS_TEMPLATE}`,
+        e.target,
+        `${process.env.REACT_APP_EMAILJS_USER}`
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("email sent!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("something went wrong!");
         }
-      })
-      .catch((err) => {
-        console.log(err);
-        setDisabled(false);
-        setEmailSent(false);
-      });
-  };
+      );
+  }
 
   return (
     <div className="Contact">
       <h1>Contact Us</h1>
-      <form style={{ width: "600px" }} onSubmit={handleSubmit}>
-        <label for="name">Name:</label>
-        <input type="text" name="name" onChange={handleChange} value={name} />
+      <form
+        className="form"
+        style={{ width: "600px" }}
+        action="/contact"
+        onSubmit={sendEmail}
+      >
+        <label className="name" for="name">
+          Name:
+        </label>
+        <input
+          className="name-field"
+          type="text"
+          name="user_name"
+          label="Name"
+        />
         <br />
         <label for="email">Email:</label>
         <input
+          className="email-field"
           type="email"
-          name="email"
-          onChange={handleChange}
-          value={email}
+          name="user_email"
+          label="Email"
         />
         <br />
         <label for="message">Message:</label>
         <input
+          className="message-field"
           type="textarea"
           name="message"
-          onChange={handleChange}
-          value={message}
+          label="Message"
         />
         <br />
-        <button type="submit">Submit</button>
+        <button className="button" type="submit">
+          Submit
+        </button>
       </form>
-      <Gps />
+      <Gps className="gps" />
       <Footer />
     </div>
   );

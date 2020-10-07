@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+
 import "../App.css";
 
 const About = () => {

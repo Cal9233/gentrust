@@ -4,9 +4,9 @@ import "../App.css";
 
 const Services = () => {
   return (
-    <div>
+    <>
       <Footer />
-    </div>
+    </>
   );
 };
 
