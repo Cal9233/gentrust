@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 import Gps from "../components/Gps";
 import Footer from "../components/Footer";
 import "../App.css";
@@ -18,6 +18,22 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventdefault();
     setDisabled(true);
+    axios
+      .post("/api/email", { disabled, emailSent })
+      .then((res) => {
+        if (res.data.success) {
+          setDisabled(false);
+          setEmailSent(true);
+        } else {
+          setDisabled(false);
+          setEmailSent(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setDisabled(false);
+        setEmailSent(false);
+      });
   };
 
   return (
