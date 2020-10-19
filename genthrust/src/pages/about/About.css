@@ -1,0 +1,31 @@
+.about-container {
+  display: flex;
+}
+
+.summary {
+  flex: 1;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.photo {
+  height: 500px;
+  width: 500px;
+  padding: 30px;
+}
+
+.second-container {
+  display: flex;
+}
+
+.service {
+  flex: 1;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.photo2 {
+  height: 500px;
+  width: 500px;
+  padding: 30px;
+}

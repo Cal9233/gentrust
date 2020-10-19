@@ -1,9 +1,9 @@
 import React from "react";
-import Gps from "../components/Gps";
-import Footer from "../components/Footer";
+import Gps from "../../components/Gps";
+import Footer from "../../components/Footer";
 import emailjs from "emailjs-com";
-import "../pages/Contact.css";
-import "../App.css";
+import "../contact/Contact.css";
+import "../../App.css";
 
 const Contact = () => {
   function sendEmail(e) {
