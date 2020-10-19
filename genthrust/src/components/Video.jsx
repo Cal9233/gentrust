@@ -2,12 +2,12 @@ import React from "react";
 import "../App.css";
 import { Button } from "./Button";
 import "./Video.css";
-import video from "../videos/video.mp4";
+import Airplane from "../videos/Airplane.mp4";
 
 const Video = () => {
   return (
     <div className="video-container">
-      <video src={video} autoPlay loop muted />
+      <video src={Airplane} autoPlay loop muted />
       <h1>Evolution awaits</h1>
       <p>What are you waiting for?</p>
       <div className="video-btns">
