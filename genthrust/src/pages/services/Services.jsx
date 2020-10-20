@@ -1,11 +1,13 @@
 import React from "react";
-import Footer from "../../components/Footer";
+import Parts from "../../components/parts/Parts";
+// import Footer from "../../components/footer/Footer";
 import "../../App.css";
 
 const Services = () => {
   return (
     <>
-      <Footer />
+      <Parts />
+      {/* <Footer /> */}
     </>
   );
 };

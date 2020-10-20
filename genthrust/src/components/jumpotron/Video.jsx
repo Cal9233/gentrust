@@ -1,8 +1,8 @@
 import React from "react";
-import "../App.css";
-import { Button } from "./Button";
+import "../../App.css";
+import { Button } from "../button/Button";
 import "./Video.css";
-import Airplane from "../videos/Airplane.mp4";
+import Airplane from "../../videos/Airplane.mp4";
 
 const Video = () => {
   return (

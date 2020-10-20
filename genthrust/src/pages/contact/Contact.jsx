@@ -1,8 +1,8 @@
 import React from "react";
-import Gps from "../../components/Gps";
-import Footer from "../../components/Footer";
+import Gps from "../../components/gps/Gps";
+import Footer from "../../components/footer/Footer";
 import emailjs from "emailjs-com";
-import "../contact/Contact.css";
+import "./Contact.css";
 import "../../App.css";
 
 const Contact = () => {
