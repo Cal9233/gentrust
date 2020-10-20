@@ -1,8 +1,8 @@
 import React from "react";
 import "../../App.css";
-import Video from "../../components/Video";
-import Cards from "../../components/Cards";
-import Footer from "../../components/Footer";
+import Video from "../../components/jumpotron/Video";
+import Cards from "../../components/cards/Cards";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (

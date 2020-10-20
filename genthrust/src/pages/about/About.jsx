@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/Footer";
 import Us from "../../images/img-8.png";
 import Parts from "../../images/img-9.png";
-import "../about/About.css";
+import "./About.css";
 import "../../App.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
