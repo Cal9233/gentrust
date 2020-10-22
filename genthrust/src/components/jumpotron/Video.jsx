@@ -13,17 +13,10 @@ const Video = () => {
       <div className="video-btns">
         <Button
           className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
-        >
-          Example 1
-        </Button>
-        <Button
-          className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          Example 2 <i className="far fa-play-circle" />
+          Find your Quote <i className="far fa-play-circle" />
         </Button>
       </div>
     </div>
