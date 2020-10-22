@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
-// import logo from "../images/logo.png"
+import logo from "../../images/logo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            GenThrust <i className="fab fa-typo3" />
+            GenThrust <i className={logo} />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
